@@ -1,0 +1,90 @@
+%PDF-1.4
+1 0 obj << /Type /Catalog /Pages 2 0 R >> endobj
+2 0 obj << /Type /Pages /Kids [3 0 R] /Count 1 >> endobj
+3 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >> endobj
+4 0 obj << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >> endobj
+5 0 obj << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> endobj
+6 0 obj << /Length 1350 >> stream
+BT
+/F1 20 Tf
+50 730 Td
+(BalKrishna Pandey) Tj
+/F2 10 Tf
+0 -18 Td
+(Software Developer | 2+ Years Professional Experience) Tj
+0 -14 Td
+(Email: balkrishnapandey.dev@gmail.com | Phone: +91 8789959135) Tj
+0 -12 Td
+(GitHub: github.com/balkrishna14 | LinkedIn: linkedin.com/in/balkrishnapandey4) Tj
+0 -22 Td
+/F1 12 Tf
+(PROFESSIONAL EXPERIENCE) Tj
+/F2 9.5 Tf
+0 -15 Td
+(Tata Consultancy Services (TCS) - Software Developer (Feb 2024 - Present)) Tj
+0 -13 Td
+(Project: Tata Steel - Logistics Project (~10,000 active users nationwide)) Tj
+0 -13 Td
+(- Developed and maintained production web apps supporting Tata Steel logistics across India.) Tj
+0 -11 Td
+(- Built responsive, accessible, reusable UI components using React, TypeScript & Next.js.) Tj
+0 -11 Td
+(- Integrated secure REST APIs and handled enterprise databases (Oracle, MS SQL Server).) Tj
+0 -11 Td
+(- Resolved critical production issues to ensure high availability and business continuity.) Tj
+0 -11 Td
+(- Utilized Git & TFS for robust version control, code reviews, and CI/CD pipelines.) Tj
+0 -20 Td
+/F1 12 Tf
+(KEY PROJECTS) Tj
+/F2 9.5 Tf
+0 -15 Td
+(PulseBoard - Real-Time Observability & Monitoring Platform (Next.js, TypeScript, SSE, Redis)) Tj
+0 -11 Td
+(- High-performance real-time telemetry streaming, latency percentiles, error rate tracking.) Tj
+0 -11 Td
+(- Automated incident detection with configurable thresholds and AI root-cause diagnostics.) Tj
+0 -15 Td
+(DocRev - Doctor Review & Appointment Platform (React, Node.js, Express, MongoDB, REST APIs)) Tj
+0 -11 Td
+(- 5+ core modules: Auth, Doctor Discovery, Reviews, Appointments, Admin Management.) Tj
+0 -11 Td
+(- 15+ reusable React components and 10+ RESTful API endpoints with MongoDB. Live: docrev.in) Tj
+0 -20 Td
+/F1 12 Tf
+(TECHNICAL SKILLS) Tj
+/F2 9.5 Tf
+0 -13 Td
+(Frontend: JavaScript (ES6+), TypeScript, React.js, Next.js, Redux, Tailwind CSS) Tj
+0 -11 Td
+(Backend: Node.js, Express.js, REST APIs | Databases: MongoDB, Oracle, MySQL, SQL Server, SQL, PostgreSQL) Tj
+0 -11 Td
+(Core: Debugging & Troubleshooting, REST API Integration, Component Architecture, SDLC, Performance, System Design) Tj
+0 -11 Td
+(AI & Tools: AI Integration, LLM APIs, AI Development | Git, GitHub, Postman, Prisma, Figma, Docker, Kubernetes) Tj
+0 -20 Td
+/F1 12 Tf
+(EDUCATION) Tj
+/F2 9.5 Tf
+0 -13 Td
+(SRM University, Chennai - B.Tech in Computer Science (2019 - 2023) | CGPA: 8.69 / 10.0) Tj
+0 -11 Td
+(Sri Prakash Synergy School, Kakinada - Class XII / MPC (2019) | Score: 72%) Tj
+0 -11 Td
+(Sri Prakash VidyaNiketan, Visakhapatnam - Class X (2017) | CGPA: 10.0 / 10.0) Tj
+ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000236 00000 n 
+0000000305 00000 n 
+0000000369 00000 n 
+trailer << /Size 7 /Root 1 0 R >>
+startxref
+1850
+%%EOF
