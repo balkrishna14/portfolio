@@ -110,7 +110,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white dark:bg-emerald-500 dark:hover:bg-emerald-400 dark:text-zinc-950 transition-all duration-200 shadow-sm hover:shadow-md active:scale-[0.98]"
               >
-                <span>Live Demo {project.title === "DocRev" ? "(https://docrev.in)" : ""}</span>
+                <span>Live Demo</span>
                 <ArrowUpRight className="w-4 h-4" />
               </a>
             ) : (

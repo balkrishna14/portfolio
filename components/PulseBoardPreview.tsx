@@ -46,7 +46,7 @@ export function PulseBoardPreview() {
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block" />
           </div>
           <span className="ml-2 font-mono text-zinc-400 text-[11px] hidden sm:inline-block">
-            pulseboard.app/live-telemetry
+            pulseboard-imnx.vercel.app
           </span>
         </div>
 

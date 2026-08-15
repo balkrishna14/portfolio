@@ -134,8 +134,8 @@ export const projects: ProjectItem[] = [
       "Tailwind CSS",
       "AI Root-Cause",
     ],
-    liveUrl: "#", // Placeholder
+    liveUrl: "https://pulseboard-imnx.vercel.app",
     githubUrl: "#", // Placeholder
-    architectureNote: "Simulated interactive live dashboard preview below (rendered purely frontend-side).",
+    architectureNote: "Production live deployment on Vercel + interactive preview below.",
   }
 ];
