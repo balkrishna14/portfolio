@@ -27,61 +27,7 @@ export interface ProjectItem {
 }
 
 export const projects: ProjectItem[] = [
-  {
-    id: "pulseboard",
-    title: "PulseBoard",
-    subtitle: "Real-Time Application Monitoring & Observability Platform",
-    badge: "Flagship Next.js & TypeScript Project",
-    category: "Observability & Next.js",
-    featured: true,
-    description:
-      "A high-performance observability platform built with Next.js and TypeScript for real-time application health monitoring, telemetry streaming, and automated incident triage.",
-    highlights: [
-      "Built with Next.js App Router and TypeScript for fast, type-safe telemetry visualisations.",
-      "Real-time tracking of uptime, API performance, request volume, error rates, and p95 latency.",
-      "Live telemetry streaming powered by Server-Sent Events (SSE) and Redis Pub/Sub.",
-      "Automated incident detection with configurable latency and error threshold alerting.",
-      "Secure API key authentication, incident management workflows, and public status pages.",
-      "Integrated AI-powered root-cause analysis for accelerated diagnostic triage.",
-    ],
-    features: [
-      {
-        title: "Live Telemetry Streaming",
-        description: "Server-Sent Events (SSE) & Redis Pub/Sub deliver sub-second metrics updates without polling.",
-      },
-      {
-        title: "Observability Metrics",
-        description: "Comprehensive tracking of uptime (99.98%), throughput, error budgets, and latency percentiles.",
-      },
-      {
-        title: "Incident Intelligence",
-        description: "Automated threshold triggers with AI-assisted root-cause anomaly diagnostics.",
-      },
-      {
-        title: "Public Status Pages",
-        description: "Configurable client-facing status boards with granular service-level health indicators.",
-      },
-    ],
-    metrics: [
-      { label: "Uptime Metric", value: "99.98%", subtext: "Target SLA" },
-      { label: "p95 Latency", value: "42ms", subtext: "Average API response" },
-      { label: "Telemetry", value: "SSE / Redis", subtext: "Live Pub/Sub stream" },
-      { label: "Security", value: "API Key Auth", subtext: "Granular scope control" },
-    ],
-    technologies: [
-      "Next.js",
-      "TypeScript",
-      "React",
-      "Server-Sent Events (SSE)",
-      "Redis Pub/Sub",
-      "REST APIs",
-      "Tailwind CSS",
-      "AI Root-Cause",
-    ],
-    liveUrl: "#", // Placeholder
-    githubUrl: "#", // Placeholder
-    architectureNote: "Simulated interactive live dashboard preview below (rendered purely frontend-side).",
-  },
+
   {
     id: "docrev",
     title: "DocRev",
@@ -137,4 +83,59 @@ export const projects: ProjectItem[] = [
     githubUrl: "#", // Placeholder
     architectureNote: "Note: The portfolio itself is frontend-only; DocRev is an external full-stack web product.",
   },
+  {
+    id: "pulseboard",
+    title: "PulseBoard",
+    subtitle: "Real-Time Application Monitoring & Observability Platform",
+    badge: "Flagship Next.js & TypeScript Project",
+    category: "Observability & Next.js",
+    featured: true,
+    description:
+      "A high-performance observability platform built with Next.js and TypeScript for real-time application health monitoring, telemetry streaming, and automated incident triage.",
+    highlights: [
+      "Built with Next.js App Router and TypeScript for fast, type-safe telemetry visualisations.",
+      "Real-time tracking of uptime, API performance, request volume, error rates, and p95 latency.",
+      "Live telemetry streaming powered by Server-Sent Events (SSE) and Redis Pub/Sub.",
+      "Automated incident detection with configurable latency and error threshold alerting.",
+      "Secure API key authentication, incident management workflows, and public status pages.",
+      "Integrated AI-powered root-cause analysis for accelerated diagnostic triage.",
+    ],
+    features: [
+      {
+        title: "Live Telemetry Streaming",
+        description: "Server-Sent Events (SSE) & Redis Pub/Sub deliver sub-second metrics updates without polling.",
+      },
+      {
+        title: "Observability Metrics",
+        description: "Comprehensive tracking of uptime (99.98%), throughput, error budgets, and latency percentiles.",
+      },
+      {
+        title: "Incident Intelligence",
+        description: "Automated threshold triggers with AI-assisted root-cause anomaly diagnostics.",
+      },
+      {
+        title: "Public Status Pages",
+        description: "Configurable client-facing status boards with granular service-level health indicators.",
+      },
+    ],
+    metrics: [
+      { label: "Uptime Metric", value: "99.98%", subtext: "Target SLA" },
+      { label: "p95 Latency", value: "42ms", subtext: "Average API response" },
+      { label: "Telemetry", value: "SSE / Redis", subtext: "Live Pub/Sub stream" },
+      { label: "Security", value: "API Key Auth", subtext: "Granular scope control" },
+    ],
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "Server-Sent Events (SSE)",
+      "Redis Pub/Sub",
+      "REST APIs",
+      "Tailwind CSS",
+      "AI Root-Cause",
+    ],
+    liveUrl: "#", // Placeholder
+    githubUrl: "#", // Placeholder
+    architectureNote: "Simulated interactive live dashboard preview below (rendered purely frontend-side).",
+  }
 ];
