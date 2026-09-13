@@ -21,7 +21,7 @@ export function SectionHeader({
   return (
     <div
       className={cn(
-        "mb-12 space-y-3",
+        "mb-8 sm:mb-12 space-y-2.5 sm:space-y-3",
         isCenter ? "text-center max-w-2xl mx-auto" : "max-w-3xl",
         className
       )}

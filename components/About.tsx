@@ -36,7 +36,7 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="py-16 sm:py-24 border-t border-zinc-200/80 dark:border-zinc-800/80">
+    <section id="about" className="py-12 sm:py-20 lg:py-24 border-t border-zinc-200/80 dark:border-zinc-800/80">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="About BalKrishna"
@@ -44,7 +44,7 @@ export function About() {
           subtitle="A summary of professional software development capabilities, engineering practices, and production experience."
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
           {/* Narrative Column */}
           <div className="lg:col-span-7 space-y-4 text-zinc-700 dark:text-zinc-300 text-sm sm:text-base leading-relaxed">
             <p>

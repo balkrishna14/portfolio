@@ -137,5 +137,59 @@ export const projects: ProjectItem[] = [
     liveUrl: "https://pulseboard-imnx.vercel.app",
     githubUrl: "#", // Placeholder
     architectureNote: "Production live deployment on Vercel + interactive preview below.",
-  }
+  },
+  {
+    id: "phonehub",
+    title: "PhoneHub",
+    subtitle: "Next-Gen Smartphone Catalog, Spec Comparison & E-Commerce Web App",
+    badge: "Interactive React 19 Application",
+    category: "Frontend Engineering",
+    featured: true,
+    description:
+      "A high-performance smartphone discovery, multi-device spec comparison arena, and catalog platform featuring 48+ smartphones across 10 top brands with real-time multi-facet filtering, Antutu benchmarks, live price trackers, and interactive 360 preview.",
+    highlights: [
+      "Engineered a catalog browsing platform featuring 48+ smartphones across 10 brands with instant faceted search (Brand, Price Range, RAM, Storage, 5G, Camera).",
+      "Built an interactive Side-by-Side Comparison Arena evaluating processors, display tech, Antutu benchmark scores, cameras, and battery speeds with dynamic winner highlights.",
+      "Integrated real-time cart and wishlist state management with localized persistence and dynamic discount calculations.",
+      "Developed an interactive device preview with 360 specs overview, dynamic color variant switchers, and simulated benchmark gauges.",
+      "Implemented a responsive, mobile-first dark-mode UI with sleek glassmorphism, instant search autocomplete, and smooth animations.",
+    ],
+    features: [
+      {
+        title: "Side-by-Side Spec Arena",
+        description: "Direct head-to-head comparison of chipset, display, camera sensor, charging wattage, and Antutu score.",
+      },
+      {
+        title: "Multi-Faceted Instant Search",
+        description: "Sub-10ms instantaneous filter engine across 10 top brands, price brackets, RAM/ROM, and 5G support.",
+      },
+      {
+        title: "Live Antutu Benchmarking",
+        description: "Visual performance tier rating comparing Snapdragon 8 Gen 3, Apple A18 Pro, Dimensity 9300, and Tensor G4.",
+      },
+      {
+        title: "Interactive Color Switcher",
+        description: "Dynamic device preview with realistic chassis tones, color variants, and instant spec breakdowns.",
+      },
+    ],
+    metrics: [
+      { label: "Smartphones", value: "48+", subtext: "Cataloged flagship & mid-range" },
+      { label: "Top Brands", value: "10", subtext: "Apple, Samsung, Google, etc." },
+      { label: "Filter Speed", value: "<10ms", subtext: "Instant client-side query" },
+      { label: "State Engine", value: "React 19", subtext: "Cart, Wishlist & Compare Dock" },
+    ],
+    technologies: [
+      "React 19",
+      "JavaScript / TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Lucide Icons",
+      "Canvas Confetti",
+      "State Management",
+      "Client-Side Storage",
+    ],
+    liveUrl: "#",
+    githubUrl: "https://github.com/balkrishna14",
+    architectureNote: "Standalone React 19 web application + interactive preview included below.",
+  },
 ];

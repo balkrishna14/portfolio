@@ -41,11 +41,11 @@ export function DocRevPreview() {
       </div>
 
       {/* Module Selector */}
-      <div className="flex items-center gap-1 px-4 pt-3 bg-zinc-950 border-b border-zinc-800/80 overflow-x-auto text-xs">
+      <div className="flex items-center gap-1 px-3 sm:px-4 pt-2.5 bg-zinc-950 border-b border-zinc-800/80 overflow-x-auto text-xs no-scrollbar">
         <button
           onClick={() => setActiveModule("discovery")}
           className={cn(
-            "flex items-center gap-1.5 px-3 py-1.5 font-medium rounded-t-lg transition-colors border-b-2",
+            "flex items-center gap-1.5 px-3 py-1.5 font-medium rounded-t-lg transition-colors border-b-2 whitespace-nowrap cursor-pointer",
             activeModule === "discovery"
               ? "text-cyan-400 border-cyan-500 bg-zinc-900/60"
               : "text-zinc-400 border-transparent hover:text-zinc-200"
@@ -58,7 +58,7 @@ export function DocRevPreview() {
         <button
           onClick={() => setActiveModule("booking")}
           className={cn(
-            "flex items-center gap-1.5 px-3 py-1.5 font-medium rounded-t-lg transition-colors border-b-2",
+            "flex items-center gap-1.5 px-3 py-1.5 font-medium rounded-t-lg transition-colors border-b-2 whitespace-nowrap cursor-pointer",
             activeModule === "booking"
               ? "text-cyan-400 border-cyan-500 bg-zinc-900/60"
               : "text-zinc-400 border-transparent hover:text-zinc-200"
@@ -71,7 +71,7 @@ export function DocRevPreview() {
         <button
           onClick={() => setActiveModule("reviews")}
           className={cn(
-            "flex items-center gap-1.5 px-3 py-1.5 font-medium rounded-t-lg transition-colors border-b-2",
+            "flex items-center gap-1.5 px-3 py-1.5 font-medium rounded-t-lg transition-colors border-b-2 whitespace-nowrap cursor-pointer",
             activeModule === "reviews"
               ? "text-cyan-400 border-cyan-500 bg-zinc-900/60"
               : "text-zinc-400 border-transparent hover:text-zinc-200"
@@ -83,13 +83,13 @@ export function DocRevPreview() {
       </div>
 
       {/* Tab Content */}
-      <div className="p-4 sm:p-5">
+      <div className="p-3.5 sm:p-5">
         {activeModule === "discovery" && (
           <div className="space-y-3">
             {/* AI Match Banner */}
-            <div className="p-2.5 rounded-lg bg-cyan-950/40 border border-cyan-500/20 text-xs flex items-center justify-between">
-              <span className="flex items-center gap-1.5 text-cyan-300 font-medium">
-                <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+            <div className="p-2.5 rounded-lg bg-cyan-950/40 border border-cyan-500/20 text-xs flex flex-wrap items-center justify-between gap-1.5">
+              <span className="flex items-center gap-1.5 text-cyan-300 font-medium text-[11px] sm:text-xs">
+                <Sparkles className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
                 AI Recommendation: Cardiology Specialist
               </span>
               <span className="font-mono text-[10px] bg-cyan-500/20 px-2 py-0.5 rounded text-cyan-300">
@@ -98,28 +98,28 @@ export function DocRevPreview() {
             </div>
 
             {/* Doctor Card */}
-            <div className="p-3.5 rounded-lg bg-zinc-900/70 border border-zinc-800 space-y-3">
-              <div className="flex items-start justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-bold">
-                    <Stethoscope className="w-5 h-5" />
+            <div className="p-3 sm:p-3.5 rounded-lg bg-zinc-900/70 border border-zinc-800 space-y-3">
+              <div className="flex items-start justify-between gap-2">
+                <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                  <div className="w-9 sm:w-10 h-9 sm:h-10 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-bold shrink-0">
+                    <Stethoscope className="w-4 sm:w-5 h-4 sm:h-5" />
                   </div>
-                  <div>
-                    <h5 className="text-sm font-semibold text-zinc-100 flex items-center gap-1.5">
+                  <div className="min-w-0">
+                    <h5 className="text-xs sm:text-sm font-semibold text-zinc-100 flex items-center gap-1.5 truncate">
                       Dr. Sarah Jenkins, MD
-                      <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                      <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                     </h5>
-                    <p className="text-xs text-zinc-400">Cardiology & Internal Medicine • 12 Yrs Exp</p>
+                    <p className="text-[11px] sm:text-xs text-zinc-400 truncate">Cardiology & Internal Medicine • 12 Yrs</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-1 bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded text-xs font-semibold">
+                <div className="flex items-center gap-1 bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded text-xs font-semibold shrink-0">
                   <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
                   <span>4.9</span>
                   <span className="text-zinc-500 text-[10px]">(128)</span>
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-1.5 text-[11px] font-mono">
+              <div className="flex flex-wrap gap-1.5 text-[10px] sm:text-[11px] font-mono">
                 <span className="px-2 py-0.5 rounded bg-zinc-800 text-zinc-300">Heart Arrhythmia</span>
                 <span className="px-2 py-0.5 rounded bg-zinc-800 text-zinc-300">Hypertension</span>
                 <span className="px-2 py-0.5 rounded bg-zinc-800 text-zinc-300">Preventive Health</span>
@@ -129,21 +129,21 @@ export function DocRevPreview() {
         )}
 
         {activeModule === "booking" && (
-          <div className="p-3 rounded-lg bg-zinc-900/70 border border-zinc-800 space-y-3 text-xs">
+          <div className="p-3 sm:p-3.5 rounded-lg bg-zinc-900/70 border border-zinc-800 space-y-3 text-xs">
             <div className="flex items-center justify-between text-zinc-300 font-medium">
-              <span className="flex items-center gap-1.5">
-                <Clock className="w-3.5 h-3.5 text-emerald-400" /> Select Available Time Slot
+              <span className="flex items-center gap-1.5 text-xs">
+                <Clock className="w-3.5 h-3.5 text-emerald-400 shrink-0" /> Select Available Time Slot
               </span>
-              <span className="text-[11px] text-zinc-500">Today, 15 Aug</span>
+              <span className="text-[10px] sm:text-[11px] text-zinc-500">Today, 15 Aug</span>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 sm:gap-2">
               {slots.map((slot) => (
                 <button
                   key={slot}
                   onClick={() => setSelectedSlot(slot)}
                   className={cn(
-                    "py-2 px-2.5 rounded-lg font-mono text-center transition-all border text-xs",
+                    "py-2 px-2 rounded-lg font-mono text-center transition-all border text-[11px] sm:text-xs cursor-pointer",
                     selectedSlot === slot
                       ? "bg-emerald-500/20 border-emerald-500/60 text-emerald-300 font-semibold"
                       : "bg-zinc-900 border-zinc-800 text-zinc-400 hover:border-zinc-700 hover:text-zinc-200"
@@ -154,7 +154,7 @@ export function DocRevPreview() {
               ))}
             </div>
 
-            <div className="p-2 rounded bg-zinc-950 text-[11px] text-emerald-400 flex items-center justify-between font-mono">
+            <div className="p-2 rounded bg-zinc-950 text-[10px] sm:text-[11px] text-emerald-400 flex items-center justify-between font-mono">
               <span>Appointment Confirmed</span>
               <span>{selectedSlot}</span>
             </div>
@@ -165,14 +165,14 @@ export function DocRevPreview() {
           <div className="space-y-2 text-xs">
             <div className="p-3 rounded-lg bg-zinc-900/70 border border-zinc-800 space-y-1.5">
               <div className="flex items-center justify-between">
-                <span className="font-semibold text-zinc-200 flex items-center gap-1.5">
-                  <UserCheck className="w-3.5 h-3.5 text-cyan-400" /> Verified Patient
+                <span className="font-semibold text-zinc-200 flex items-center gap-1.5 text-xs">
+                  <UserCheck className="w-3.5 h-3.5 text-cyan-400 shrink-0" /> Verified Patient
                 </span>
-                <div className="flex text-amber-400">
+                <div className="flex text-amber-400 text-xs">
                   {"★".repeat(5)}
                 </div>
               </div>
-              <p className="text-zinc-400 text-xs leading-relaxed">
+              <p className="text-zinc-400 text-[11px] sm:text-xs leading-relaxed">
                 &ldquo;Booking was smooth and Dr. Jenkins addressed all cardiac diagnostic questions clearly. Highly recommended!&rdquo;
               </p>
             </div>

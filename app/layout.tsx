@@ -42,6 +42,7 @@ export const metadata: Metadata = {
     "Tata Steel Logistics",
     "DocRev",
     "PulseBoard",
+    "PhoneHub",
   ],
   authors: [{ name: "BalKrishna Pandey" }],
   creator: "BalKrishna Pandey",
