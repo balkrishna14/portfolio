@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import confetti from "canvas-confetti";
 import {
   Smartphone,
@@ -13,6 +14,7 @@ import {
   ShoppingCart,
   Check,
   Zap,
+  ArrowUpRight,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -22,6 +24,7 @@ interface PhoneSpec {
   brand: string;
   price: string;
   tag: string;
+  image: string;
   antutu: number;
   chipset: string;
   display: string;
@@ -30,8 +33,6 @@ interface PhoneSpec {
   charging: string;
   colors: { name: string; hex: string; glow: string }[];
   accentColor: string;
-  screenWallpaper: string;
-  notchType: "dynamic-island" | "punch-hole";
 }
 
 const PHONES_DATA: PhoneSpec[] = [
@@ -41,20 +42,19 @@ const PHONES_DATA: PhoneSpec[] = [
     brand: "Apple",
     price: "₹1,44,900",
     tag: "Flagship Titan",
+    image: "/images/phones/iphone-16-pro-max.png",
     antutu: 2185000,
     chipset: "Apple A18 Pro (3nm)",
     display: "6.9\" Super Retina XDR OLED 120Hz",
     camera: "48MP Fusion + 48MP Ultra-Wide + 5x Tele",
     battery: "4685 mAh",
     charging: "30W Fast / 25W MagSafe",
-    accentColor: "#94a3b8",
-    screenWallpaper: "from-amber-600/30 via-stone-800 to-zinc-950",
-    notchType: "dynamic-island",
+    accentColor: "#c5b29c",
     colors: [
-      { name: "Desert Titanium", hex: "#c5b29c", glow: "rgba(197, 178, 156, 0.4)" },
-      { name: "Natural Titanium", hex: "#9da19f", glow: "rgba(157, 161, 159, 0.4)" },
-      { name: "White Titanium", hex: "#e5e5e5", glow: "rgba(229, 229, 229, 0.3)" },
-      { name: "Black Titanium", hex: "#2b2a29", glow: "rgba(43, 42, 41, 0.5)" },
+      { name: "Desert Titanium", hex: "#c5b29c", glow: "rgba(197, 178, 156, 0.35)" },
+      { name: "Natural Titanium", hex: "#9da19f", glow: "rgba(157, 161, 159, 0.35)" },
+      { name: "White Titanium", hex: "#e5e5e5", glow: "rgba(229, 229, 229, 0.25)" },
+      { name: "Black Titanium", hex: "#2b2a29", glow: "rgba(43, 42, 41, 0.4)" },
     ],
   },
   {
@@ -62,7 +62,8 @@ const PHONES_DATA: PhoneSpec[] = [
     name: "Galaxy S24 Ultra",
     brand: "Samsung",
     price: "₹1,29,999",
-    tag: "AI Flagship",
+    tag: "Galaxy AI Beast",
+    image: "/images/phones/galaxy-s24-ultra.png",
     antutu: 2090000,
     chipset: "Snapdragon 8 Gen 3 for Galaxy",
     display: "6.8\" Dynamic AMOLED 2X 120Hz Gorilla Armor",
@@ -70,13 +71,11 @@ const PHONES_DATA: PhoneSpec[] = [
     battery: "5000 mAh",
     charging: "45W Fast Wired / 15W Wireless",
     accentColor: "#38bdf8",
-    screenWallpaper: "from-blue-600/30 via-indigo-900 to-zinc-950",
-    notchType: "punch-hole",
     colors: [
-      { name: "Titanium Gray", hex: "#63666a", glow: "rgba(99, 102, 106, 0.4)" },
-      { name: "Titanium Violet", hex: "#4b4453", glow: "rgba(75, 68, 83, 0.4)" },
-      { name: "Titanium Yellow", hex: "#d9cb9e", glow: "rgba(217, 203, 158, 0.4)" },
-      { name: "Titanium Black", hex: "#1f2022", glow: "rgba(31, 32, 34, 0.5)" },
+      { name: "Titanium Gray", hex: "#63666a", glow: "rgba(99, 102, 106, 0.35)" },
+      { name: "Titanium Violet", hex: "#4b4453", glow: "rgba(75, 68, 83, 0.35)" },
+      { name: "Titanium Yellow", hex: "#d9cb9e", glow: "rgba(217, 203, 158, 0.35)" },
+      { name: "Titanium Black", hex: "#1f2022", glow: "rgba(31, 32, 34, 0.4)" },
     ],
   },
   {
@@ -84,7 +83,8 @@ const PHONES_DATA: PhoneSpec[] = [
     name: "Pixel 9 Pro XL",
     brand: "Google",
     price: "₹1,24,999",
-    tag: "Gemini AI Beast",
+    tag: "Gemini AI Flagship",
+    image: "/images/phones/pixel-9-pro-xl.png",
     antutu: 1780000,
     chipset: "Google Tensor G4 (4nm)",
     display: "6.8\" Super Actua LTPO OLED 3000 nits",
@@ -92,13 +92,11 @@ const PHONES_DATA: PhoneSpec[] = [
     battery: "5060 mAh",
     charging: "37W Fast / 23W Wireless",
     accentColor: "#34d399",
-    screenWallpaper: "from-emerald-600/30 via-teal-950 to-zinc-950",
-    notchType: "punch-hole",
     colors: [
-      { name: "Hazel", hex: "#858b82", glow: "rgba(133, 139, 130, 0.4)" },
-      { name: "Obsidian", hex: "#22252a", glow: "rgba(34, 37, 42, 0.5)" },
-      { name: "Porcelain", hex: "#ece8df", glow: "rgba(236, 232, 223, 0.3)" },
-      { name: "Rose Quartz", hex: "#ddb4b5", glow: "rgba(221, 180, 181, 0.4)" },
+      { name: "Hazel", hex: "#858b82", glow: "rgba(133, 139, 130, 0.35)" },
+      { name: "Obsidian", hex: "#22252a", glow: "rgba(34, 37, 42, 0.4)" },
+      { name: "Porcelain", hex: "#ece8df", glow: "rgba(236, 232, 223, 0.25)" },
+      { name: "Rose Quartz", hex: "#ddb4b5", glow: "rgba(221, 180, 181, 0.35)" },
     ],
   },
   {
@@ -107,6 +105,7 @@ const PHONES_DATA: PhoneSpec[] = [
     brand: "OnePlus",
     price: "₹64,999",
     tag: "Performance King",
+    image: "/images/phones/oneplus-12.png",
     antutu: 2110000,
     chipset: "Snapdragon 8 Gen 3 (4nm)",
     display: "6.82\" 2K ProXDR 120Hz 4500 nits",
@@ -114,12 +113,10 @@ const PHONES_DATA: PhoneSpec[] = [
     battery: "5400 mAh",
     charging: "100W SUPERVOOC / 50W AIRVOOC",
     accentColor: "#f87171",
-    screenWallpaper: "from-emerald-700/40 via-zinc-900 to-zinc-950",
-    notchType: "punch-hole",
     colors: [
-      { name: "Emerald Green", hex: "#234e40", glow: "rgba(35, 78, 64, 0.5)" },
-      { name: "Silky Black", hex: "#1c1d1f", glow: "rgba(28, 29, 31, 0.5)" },
-      { name: "Glacial White", hex: "#e2e8f0", glow: "rgba(226, 232, 240, 0.3)" },
+      { name: "Emerald Green", hex: "#234e40", glow: "rgba(35, 78, 64, 0.4)" },
+      { name: "Silky Black", hex: "#1c1d1f", glow: "rgba(28, 29, 31, 0.4)" },
+      { name: "Glacial White", hex: "#e2e8f0", glow: "rgba(226, 232, 240, 0.25)" },
     ],
   },
 ];
@@ -155,20 +152,27 @@ export function PhoneHubPreview() {
 
   return (
     <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-950 text-zinc-100 overflow-hidden font-sans shadow-lg">
-      {/* Top Window Bar */}
+      {/* Top Window Bar with Live Link */}
       <div className="flex items-center justify-between px-3 sm:px-4 py-2.5 bg-zinc-900 border-b border-zinc-800 text-xs">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 min-w-0">
           <div className="flex gap-1.5 shrink-0">
             <span className="w-2.5 h-2.5 rounded-full bg-red-500/80 inline-block" />
             <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block" />
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block" />
           </div>
-          <span className="ml-1.5 font-mono text-zinc-400 text-[11px] truncate max-w-[140px] sm:max-w-none">
-            phonehub.app/catalog
-          </span>
+          <a
+            href="https://phonehub-one.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-1.5 font-mono text-zinc-400 hover:text-cyan-400 transition-colors text-[11px] truncate flex items-center gap-1"
+            title="Open phonehub-one.vercel.app"
+          >
+            <span>phonehub-one.vercel.app</span>
+            <ArrowUpRight className="w-3 h-3 shrink-0" />
+          </a>
         </div>
 
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-1.5 shrink-0">
           <span className="px-2 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-[10px] sm:text-[11px] font-mono">
             48+ Phones
           </span>
@@ -191,7 +195,7 @@ export function PhoneHubPreview() {
           )}
         >
           <Smartphone className="w-3.5 h-3.5 text-cyan-400" />
-          <span>Interactive QuickView</span>
+          <span>Product Showcase</span>
         </button>
 
         <button
@@ -225,7 +229,7 @@ export function PhoneHubPreview() {
 
       {/* Tab Content */}
       <div className="p-3.5 sm:p-5">
-        {/* 1. Interactive QuickView */}
+        {/* 1. Realistic Product Showcase */}
         {activeTab === "catalog" && (
           <div className="space-y-4">
             {/* Device Selector Pills */}
@@ -236,65 +240,52 @@ export function PhoneHubPreview() {
                   type="button"
                   onClick={() => handleSelectPhone(p.id)}
                   className={cn(
-                    "px-2.5 py-1 text-[11px] font-mono rounded-lg transition-all border whitespace-nowrap cursor-pointer",
+                    "px-3 py-1 text-[11px] font-mono rounded-lg transition-all border whitespace-nowrap cursor-pointer min-h-[30px]",
                     selectedPhoneId === p.id
                       ? "bg-cyan-500/20 text-cyan-300 border-cyan-500/60 font-semibold shadow-xs"
                       : "bg-zinc-900/80 text-zinc-400 border-zinc-800 hover:border-zinc-700 hover:text-zinc-200"
                   )}
                 >
-                  {p.brand} {p.name.split(" ")[1] || ""}
+                  {p.name}
                 </button>
               ))}
             </div>
 
-            {/* Main Interactive Phone Showcase Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center bg-zinc-900/50 p-3.5 sm:p-4 rounded-xl border border-zinc-800/80">
-              {/* Left Column: Realistic CSS Smartphone Render with Dynamic Color */}
+            {/* Main Realistic Product Showcase Card */}
+            <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center bg-zinc-900/60 p-3.5 sm:p-4 rounded-xl border border-zinc-800/80">
+              {/* Left Column: Authentic Smartphone Photography & Color Customizer */}
               <div className="sm:col-span-5 flex flex-col items-center justify-center">
                 <div
-                  className="relative w-36 h-60 rounded-[28px] p-2 border-2 transition-all duration-300 shadow-2xl flex flex-col justify-between overflow-hidden"
+                  className="relative w-full max-w-[190px] h-[210px] sm:h-[220px] rounded-2xl p-3 bg-zinc-950/80 border border-zinc-800/80 transition-all duration-300 flex flex-col items-center justify-center overflow-hidden group"
                   style={{
-                    backgroundColor: activeColor.hex,
-                    borderColor: activeColor.hex,
-                    boxShadow: `0 0 24px ${activeColor.glow}`,
+                    boxShadow: `0 0 32px ${activeColor.glow}`,
                   }}
                 >
-                  {/* Outer Bezel */}
+                  {/* Subtle Background Color Ambient Glow */}
                   <div
-                    className={cn(
-                      "w-full h-full rounded-[22px] bg-gradient-to-b p-2 flex flex-col justify-between relative overflow-hidden border border-white/10",
-                      phone.screenWallpaper
-                    )}
-                  >
-                    {/* Screen Top (Dynamic Island or Notch) */}
-                    <div className="flex items-center justify-between text-[8px] font-mono text-white/70 px-1 pt-0.5">
-                      <span>9:41</span>
-                      {phone.notchType === "dynamic-island" ? (
-                        <div className="w-12 h-3 bg-black rounded-full mx-auto flex items-center justify-end px-1">
-                          <span className="w-1 h-1 rounded-full bg-emerald-400 animate-pulse" />
-                        </div>
-                      ) : (
-                        <div className="w-2.5 h-2.5 bg-black rounded-full mx-auto" />
-                      )}
-                      <span>5G</span>
-                    </div>
+                    className="absolute inset-0 opacity-20 blur-xl transition-all duration-500 pointer-events-none"
+                    style={{ backgroundColor: activeColor.hex }}
+                  />
 
-                    {/* Mid Screen Content */}
-                    <div className="text-center py-2 space-y-0.5">
-                      <span className="inline-block px-1.5 py-0.5 rounded bg-black/40 text-[9px] font-mono text-cyan-300 backdrop-blur-xs border border-cyan-500/30">
-                        {phone.brand} 2026
-                      </span>
-                      <div className="text-xs font-bold text-white tracking-tight leading-tight">
-                        {phone.name}
-                      </div>
-                      <div className="text-[10px] text-zinc-300 font-mono">
-                        {phone.price}
-                      </div>
-                    </div>
+                  {/* Brand Pill */}
+                  <span className="absolute top-2 left-2.5 px-2 py-0.5 rounded-full bg-zinc-900/90 border border-zinc-700 text-[9px] font-mono text-cyan-300 z-10">
+                    {phone.brand}
+                  </span>
 
-                    {/* Bottom Home Indicator */}
-                    <div className="w-12 h-1 bg-white/40 rounded-full mx-auto mb-0.5" />
+                  {/* Real Product Image */}
+                  <div className="relative w-full h-[150px] sm:h-[160px] flex items-center justify-center z-10 py-1">
+                    <img
+                      src={phone.image}
+                      alt={phone.name}
+                      className="max-h-full max-w-full object-contain drop-shadow-[0_10px_16px_rgba(0,0,0,0.6)] transition-transform duration-300 group-hover:scale-105"
+                    />
                   </div>
+
+                  {/* Pedestal Shadow */}
+                  <div
+                    className="w-24 h-2 rounded-full blur-xs opacity-60 mt-1"
+                    style={{ backgroundColor: activeColor.hex }}
+                  />
                 </div>
 
                 {/* Color Swatch Selector */}
@@ -315,20 +306,25 @@ export function PhoneHubPreview() {
                     />
                   ))}
                 </div>
-                <div className="text-[10px] font-mono text-zinc-400 mt-1">
+                <div className="text-[10px] font-mono text-zinc-400 mt-1 text-center">
                   Color: <span className="text-zinc-200">{activeColor.name}</span>
                 </div>
               </div>
 
               {/* Right Column: Specs Breakdown & Live Cart Action */}
               <div className="sm:col-span-7 space-y-2.5 text-xs">
-                <div className="flex items-center justify-between">
-                  <span className="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px] font-mono font-medium">
-                    {phone.tag}
-                  </span>
-                  <span className="text-xs font-bold text-cyan-400 font-mono">
-                    {phone.price}
-                  </span>
+                <div>
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px] font-mono font-medium">
+                      {phone.tag}
+                    </span>
+                    <span className="text-sm font-bold text-cyan-400 font-mono">
+                      {phone.price}
+                    </span>
+                  </div>
+                  <h4 className="text-base font-bold text-zinc-100 tracking-tight mt-1">
+                    {phone.name}
+                  </h4>
                 </div>
 
                 <div className="space-y-1.5">
@@ -364,7 +360,7 @@ export function PhoneHubPreview() {
                   type="button"
                   onClick={handleAddToCart}
                   className={cn(
-                    "w-full py-2 px-3 rounded-lg font-medium text-xs flex items-center justify-center gap-1.5 transition-all duration-200 cursor-pointer shadow-xs",
+                    "w-full py-2 px-3 rounded-lg font-medium text-xs flex items-center justify-center gap-1.5 transition-all duration-200 cursor-pointer shadow-xs min-h-[36px]",
                     addedToCart
                       ? "bg-emerald-500 text-zinc-950 font-bold"
                       : "bg-cyan-600 hover:bg-cyan-500 text-white active:scale-[0.98]"
@@ -392,13 +388,13 @@ export function PhoneHubPreview() {
           <div className="space-y-3">
             {/* Showdown Header */}
             <div className="flex items-center justify-between gap-2 p-2.5 rounded-lg bg-zinc-900/80 border border-zinc-800 text-xs">
-              <div className="flex items-center gap-1 min-w-0">
-                <span className="font-bold text-cyan-400 truncate">{phone.name.split(" ")[0]} {phone.name.split(" ")[1] || ""}</span>
+              <div className="flex items-center gap-1.5 min-w-0">
+                <span className="font-bold text-cyan-400 truncate text-xs">{phone.name}</span>
                 <span className="text-[10px] font-mono text-zinc-500">VS</span>
                 <select
                   value={comparePhoneId}
                   onChange={(e) => setComparePhoneId(e.target.value)}
-                  className="bg-zinc-950 text-emerald-400 font-bold text-xs rounded border border-zinc-700 px-1.5 py-0.5 outline-none"
+                  className="bg-zinc-950 text-emerald-400 font-bold text-xs rounded border border-zinc-700 px-2 py-0.5 outline-none cursor-pointer"
                 >
                   {PHONES_DATA.filter((p) => p.id !== selectedPhoneId).map((p) => (
                     <option key={p.id} value={p.id} className="bg-zinc-900 text-zinc-200">
@@ -412,6 +408,33 @@ export function PhoneHubPreview() {
               </span>
             </div>
 
+            {/* Compared Devices Photos Strip */}
+            <div className="grid grid-cols-2 gap-2">
+              <div className="p-2.5 rounded-xl bg-zinc-900/60 border border-zinc-800 flex items-center gap-2">
+                <img
+                  src={phone.image}
+                  alt={phone.name}
+                  className="w-10 h-10 object-contain drop-shadow shrink-0"
+                />
+                <div className="min-w-0">
+                  <div className="text-[11px] font-bold text-zinc-100 truncate">{phone.name}</div>
+                  <div className="text-[10px] font-mono text-cyan-400">{phone.price}</div>
+                </div>
+              </div>
+
+              <div className="p-2.5 rounded-xl bg-zinc-900/60 border border-zinc-800 flex items-center gap-2">
+                <img
+                  src={comparePhone.image}
+                  alt={comparePhone.name}
+                  className="w-10 h-10 object-contain drop-shadow shrink-0"
+                />
+                <div className="min-w-0">
+                  <div className="text-[11px] font-bold text-zinc-100 truncate">{comparePhone.name}</div>
+                  <div className="text-[10px] font-mono text-emerald-400">{comparePhone.price}</div>
+                </div>
+              </div>
+            </div>
+
             {/* Side-by-Side Specs Grid */}
             <div className="space-y-2 text-xs">
               {/* Row 1: Chipset & Antutu */}
@@ -421,7 +444,7 @@ export function PhoneHubPreview() {
                     <Cpu className="w-3 h-3 text-indigo-400" /> Chipset & AnTuTu Score
                   </span>
                   <span className="text-emerald-400 text-[10px]">
-                    Winner: {phone.antutu >= comparePhone.antutu ? phone.brand : comparePhone.brand}
+                    Winner: {phone.antutu >= comparePhone.antutu ? phone.name : comparePhone.name}
                   </span>
                 </div>
                 <div className="grid grid-cols-2 gap-2 text-[11px]">
@@ -497,14 +520,18 @@ export function PhoneHubPreview() {
                 return (
                   <div key={p.id} className="space-y-1">
                     <div className="flex items-center justify-between text-xs">
-                      <span className="font-semibold text-zinc-200 flex items-center gap-1.5">
-                        <Sparkles className="w-3 h-3 text-cyan-400" />
-                        {p.name}
-                        <span className="text-[10px] font-mono text-zinc-500 font-normal hidden xs:inline">
+                      <span className="font-semibold text-zinc-200 flex items-center gap-2 min-w-0">
+                        <img
+                          src={p.image}
+                          alt={p.name}
+                          className="w-5 h-5 object-contain shrink-0"
+                        />
+                        <span className="truncate">{p.name}</span>
+                        <span className="text-[10px] font-mono text-zinc-500 font-normal hidden sm:inline truncate">
                           ({p.chipset.split("(")[0]})
                         </span>
                       </span>
-                      <span className="font-mono text-cyan-400 font-bold text-xs">
+                      <span className="font-mono text-cyan-400 font-bold text-xs shrink-0">
                         {p.antutu.toLocaleString()}
                       </span>
                     </div>

@@ -188,8 +188,8 @@ export const projects: ProjectItem[] = [
       "State Management",
       "Client-Side Storage",
     ],
-    liveUrl: "#",
+    liveUrl: "https://phonehub-one.vercel.app",
     githubUrl: "https://github.com/balkrishna14",
-    architectureNote: "Standalone React 19 web application + interactive preview included below.",
+    architectureNote: "Live product deployed at phonehub-one.vercel.app + interactive preview included below.",
   },
 ];
